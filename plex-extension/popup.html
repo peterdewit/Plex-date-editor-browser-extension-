@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Plex Date Bump</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 12px; width: 340px; }
+    h1 { font-size: 16px; margin: 0 0 10px; }
+    .row { margin-bottom: 10px; }
+    button { width: 100%; padding: 10px; margin-top: 8px; cursor: pointer; }
+    input, select { width: 100%; box-sizing: border-box; padding: 8px; }
+    .muted { color: #666; font-size: 12px; }
+    #status { white-space: pre-wrap; font-size: 12px; margin-top: 10px; }
+    details { margin: 10px 0; }
+    code { font-size: 11px; }
+  </style>
+</head>
+<body>
+  <h1>Plex Date Bump</h1>
+  <div class="row">
+    <label for="mode">Mode</label>
+    <select id="mode">
+      <option value="90">Move back 90 days</option>
+      <option value="180">Move back 180 days</option>
+      <option value="365">Move back 365 days</option>
+      <option value="custom">Set to specific date</option>
+    </select>
+  </div>
+  <div class="row" id="customRow" style="display:none;">
+    <label for="customDate">Custom date</label>
+    <input id="customDate" type="date">
+  </div>
+
+  <details>
+    <summary>Server settings</summary>
+    <div class="row">
+      <label for="serverBase">Plex server base URL</label>
+      <input id="serverBase" type="text" placeholder="http://192.168.0.140:32400">
+    </div>
+    <div class="row">
+      <label for="plexToken">Plex token</label>
+      <input id="plexToken" type="password" placeholder="X-Plex-Token">
+    </div>
+    <button id="saveSettings" type="button">Save settings</button>
+    <div class="muted">These are only used if the page cannot provide them automatically. Requests omit browser cookies and use token auth only.</div>
+  </details>
+
+  <button id="apply">Apply to current Plex item</button>
+  <div class="muted">Open a Plex movie, show, season, episode, album, or item details page first.</div>
+  <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
