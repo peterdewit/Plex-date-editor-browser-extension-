@@ -4,6 +4,8 @@
 
 Chrome/Chromium extension to move the current Plex item back in **Recently Added** by updating the item's `addedAt` value through Plex's web/API endpoint.
 
+![Description](/d50c7ebd-d268-4158-b1b6-af501df46811.png)
+
 ## What changed in v1.1.0
 
 This version does **not rely on browser cookies** for Plex API requests. It sends the request using `X-Plex-Token` only, which avoids HTTP 400 failures on servers where many unrelated services share the same host/IP and browser cookie scope.
