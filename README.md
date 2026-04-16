@@ -1,3 +1,5 @@
+*MADE WITH AI*
+
 # Plex Date Bump
 
 Chrome/Chromium extension to move the current Plex item back in **Recently Added** by updating the item's `addedAt` value through Plex's web/API endpoint.
